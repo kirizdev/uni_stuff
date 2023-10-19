@@ -12,11 +12,10 @@ end
 
 def main
   puts "Введіть число: "
-  user_input = gets.chomp
+  user_input = gets.chomp.to_i
 
   begin
-    number = Integer(user_input)
-    result = Factorial.calculate(number)
+    result = Factorial.calculate(user_input)
     puts "Факторіал числа #{number} дорівнює #{result} :)"
   rescue ArgumentError => e
     puts "Помилка: #{e.message}"
